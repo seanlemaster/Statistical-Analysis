@@ -1,0 +1,173 @@
+> labels=paste(rep("A",10),1:10,sep="_")
+> labels
+ [1] "A_1"  "A_2"  "A_3"  "A_4"  "A_5"  "A_6"  "A_7"  "A_8"  "A_9"  "A_10"
+> 
+>  labels=factor(labels)
+> labels
+ [1] A_1  A_2  A_3  A_4  A_5  A_6  A_7  A_8  A_9  A_10
+Levels: A_1 A_10 A_2 A_3 A_4 A_5 A_6 A_7 A_8 A_9
+> 
+> ## Exercise 3
+> 
+> even=seq(2,15, by=2)
+> even
+[1]  2  4  6  8 10 12 14
+> 
+> sequence=rep(c(even, odd), times=2)
+Error: object 'odd' not found
+> 
+> odd=seq(1,15, by=2)
+> 
+> sequence=rep(c(even, odd), times=2)
+> sequence
+ [1]  2  4  6  8 10 12 14  1  3  5  7  9 11 13 15  2  4  6  8 10 12 14  1  3  5  7  9 11 13 15
+> 
+> class(sequence)
+[1] "numeric"
+> 
+> ## Exercise 4
+> 
+> Capital=LETTERS
+> lower=letters
+> numeric=seq(51,1,-2)
+> numeric
+ [1] 51 49 47 45 43 41 39 37 35 33 31 29 27 25 23 21 19 17 15 13 11  9  7  5  3  1
+> 
+> final=paste(Capital, Lower, numeric, sep=":")
+Error: object 'Lower' not found
+> final=paste(Capital, lower, numeric, sep=":")
+> final
+ [1] "A:a:51" "B:b:49" "C:c:47" "D:d:45" "E:e:43" "F:f:41" "G:g:39" "H:h:37" "I:i:35" "J:j:33"
+[11] "K:k:31" "L:l:29" "M:m:27" "N:n:25" "O:o:23" "P:p:21" "Q:q:19" "R:r:17" "S:s:15" "T:t:13"
+[21] "U:u:11" "V:v:9"  "W:w:7"  "X:x:5"  "Y:y:3"  "Z:z:1" 
+> 
+> ## A= 1st object of the vector, a=2nd object of the vector, 51= 3rd object of the vector. 
+> 
+> length(v)
+[1] 5
+> v
+[1] 9 7 5 3 1
+> 
+> ## Length tells you how many vectors are present in a function. 
+> 
+> min(v)
+[1] 1
+> max(v)
+[1] 9
+> median(v)
+[1] 5
+> mean(v)
+[1] 5
+> var(v) ## variance
+[1] 10
+> 
+> ## ^ These are self-explanatory. 
+> 
+> sd(v) ## standard deviation
+[1] 3.162278
+> 
+> ## Quantile is a number which divides your vector into two sections. First section contains all the numbers greater than the quartile, the second section are the numbers smaller than. 
+> 
+> v
+[1] 9 7 5 3 1
+> 
+> v=seq(seq(4:10))
+> v
+[1] 1 2 3 4 5 6 7
+> v=seq(4:10)
+> v
+[1] 1 2 3 4 5 6 7
+> v=seq(4,10)
+> v
+[1]  4  5  6  7  8  9 10
+> 
+> x=c(1:10)
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> x=1:100
+> x
+  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23
+ [24]  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46
+ [47]  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69
+ [70]  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92
+ [93]  93  94  95  96  97  98  99 100
+> 
+> quantile(x, 0.25)
+  25% 
+25.75 
+> 
+> quantile(x, c(0.01,0.5,0.9))
+   1%   50%   90% 
+ 1.99 50.50 90.10 
+> 
+> summary(x)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   25.75   50.50   50.50   75.25  100.00 
+> 
+> sample(x,5)
+[1] 53 39 91 85 32
+> sample(x,5)
+[1] 39 96 77 87  8
+> ## This propduces a random sample.
+> 
+> ## coin-toss
+> 
+> t=sample(c("T","C"),10,replace=T)
+> t
+ [1] "T" "C" "T" "C" "C" "T" "T" "T" "C" "C"
+> 
+> ## if you want to assign a different probability 
+> 
+> t=sample(c("T","C"),10,replace=T, prob=c(0.5, 0.5))
+> t
+ [1] "C" "T" "T" "T" "T" "T" "T" "C" "T" "T"
+> 
+> ## Exercise 5
+> 
+> t=sample(c("T","C"),100,replace=T, prob=c(0.66, 0.33)
++ t
+Error: unexpected symbol in:
+"t=sample(c("T","C"),100,replace=T, prob=c(0.66, 0.33)
+t"
+> t=sample(c("T","C"),100,replace=T, prob=c(0.6, 0.3)
++ t
+Error: unexpected symbol in:
+"t=sample(c("T","C"),100,replace=T, prob=c(0.6, 0.3)
+t"
+> t=sample(c("T","C"),100,replace=T, prob=c(0.6, 0.3))
+> t=sample(c("T","C"),100,replace=T, prob=c(0.66, 0.33))
+> t
+  [1] "T" "T" "C" "T" "T" "T" "C" "T" "C" "T" "T" "C" "C" "C" "C" "T" "C" "T" "T" "T" "C" "C" "T"
+ [24] "C" "T" "T" "C" "T" "T" "T" "C" "T" "T" "C" "C" "T" "T" "T" "T" "C" "C" "C" "T" "T" "C" "T"
+ [47] "C" "C" "T" "C" "T" "T" "C" "T" "T" "T" "T" "C" "T" "T" "C" "T" "C" "T" "T" "T" "T" "C" "C"
+ [70] "T" "T" "T" "T" "T" "T" "T" "T" "C" "T" "T" "T" "T" "T" "T" "T" "C" "T" "T" "C" "T" "T" "T"
+ [93] "T" "C" "T" "T" "T" "T" "C" "T"
+> 
+> summary(x)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   25.75   50.50   50.50   75.25  100.00 
+> summary(t)
+   Length  N.unique   N.blank Min.nchar Max.nchar 
+      100         2         0         1         1 
+> t=factor(t)
+> summary(t)
+ C  T 
+33 67 
+> 
+> t=sample(c("T","C"),100,replace=T, prob=c(0.665, 0.335))
+> t
+  [1] "T" "C" "T" "T" "C" "T" "C" "C" "C" "T" "C" "T" "T" "T" "T" "C" "T" "T" "C" "T" "C" "T" "C"
+ [24] "T" "C" "T" "C" "T" "T" "T" "C" "C" "T" "T" "C" "C" "T" "T" "T" "C" "T" "C" "C" "T" "C" "T"
+ [47] "C" "T" "T" "T" "C" "T" "T" "T" "C" "T" "C" "C" "T" "T" "C" "T" "T" "T" "C" "T" "T" "C" "C"
+ [70] "C" "T" "T" "T" "T" "C" "T" "T" "T" "C" "C" "C" "T" "C" "T" "T" "T" "T" "C" "T" "T" "T" "T"
+ [93] "C" "C" "T" "T" "T" "C" "T" "C"
+> t=factor(t)
+> t
+  [1] T C T T C T C C C T C T T T T C T T C T C T C T C T C T T T C C T T C C T T T C T C C T C T
+ [47] C T T T C T T T C T C C T T C T T T C T T C C C T T T T C T T T C C C T C T T T T C T T T T
+ [93] C C T T T C T C
+Levels: C T
+> summary(t)
+ C  T 
+40 60 
+> 
