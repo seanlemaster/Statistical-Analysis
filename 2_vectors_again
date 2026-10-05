@@ -121,18 +121,20 @@ Error: object 'Lower' not found
 > t=sample(c("T","C"),10,replace=T, prob=c(0.5, 0.5))
 > t
  [1] "C" "T" "T" "T" "T" "T" "T" "C" "T" "T"
-> 
+
+
 > ## Exercise 5
+
+trial1=sample(c("T","C"),100,replace=T, prob=c(2/3, 1/3))
+> trial1
+  [1] "T" "T" "T" "T" "T" "T" "T" "C" "T" "T" "T" "C" "T" "T" "T" "T" "C" "C" "C" "C" "C" "T" "C"
+ [24] "T" "T" "T" "C" "T" "T" "T" "C" "T" "C" "T" "C" "T" "T" "C" "T" "T" "T" "C" "C" "C" "T" "T"
+ [47] "T" "T" "T" "T" "T" "T" "T" "C" "T" "C" "T" "C" "C" "T" "T" "T" "T" "T" "C" "T" "T" "C" "T"
+ [70] "C" "T" "T" "T" "C" "T" "T" "C" "T" "T" "T" "C" "T" "C" "T" "C" "T" "C" "T" "T" "C" "T" "C"
+ [93] "T" "T" "C" "C" "C" "T" "T" "C"
 > 
-> t=sample(c("T","C"),100,replace=T, prob=c(2/3, 1/3))
-> t
-  [1] "T" "T" "C" "T" "T" "T" "C" "T" "C" "T" "T" "C" "C" "C" "C" "T" "C" "T" "T" "T" "C" "C" "T"
- [24] "C" "T" "T" "C" "T" "T" "T" "C" "T" "T" "C" "C" "T" "T" "T" "T" "C" "C" "C" "T" "T" "C" "T"
- [47] "C" "C" "T" "C" "T" "T" "C" "T" "T" "T" "T" "C" "T" "T" "C" "T" "C" "T" "T" "T" "T" "C" "C"
- [70] "T" "T" "T" "T" "T" "T" "T" "T" "C" "T" "T" "T" "T" "T" "T" "T" "C" "T" "T" "C" "T" "T" "T"
- [93] "T" "C" "T" "T" "T" "T" "C" "T"
-> 
-> summary(t)
-   Length  N.unique   N.blank Min.nchar Max.nchar 
-      100         2         0         1         1 
+> trial1=factor(trial1)
+> summary(trial1)
+ C  T 
+35 65 
 
