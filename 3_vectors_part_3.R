@@ -35,11 +35,37 @@ condition
 vector3=deciles[condition]
 vector3
 
-quartiles=quantile(vector3, seq(0,1,0.25)  ## compute the quartiles.
+quartiles=quantile(vector3, seq(0,1,0.25))  ## compute the quartiles.
+
+### Matrices: ordered, two-dimensional objects built in rows and columns. Elements contained in a matrix must be homogenous.
+
+m=matrix(1:12, nrow=3, byrow= TRUE)
+m
+
+a=1:7
+b=8:14
+glue1=rbind(a,b)
+glue1
+
+glue2=cbind(a,b)
+colnames(glue2)=c("Column1", "Column2")
+rownames(glue2)=c("row1", "row2")
 
 
 
-                   ## Matrices: ordered, two-dimensional objects built in rows and columns. Elements contained in a matrix must be homogenous.
 
+
+
+          
+
+                   
+
+
+
+
+
+
+
+                   
                    
                    
