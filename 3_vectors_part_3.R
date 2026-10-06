@@ -51,8 +51,71 @@ glue2=cbind(a,b)
 colnames(glue2)=c("Column1", "Column2")
 rownames(glue2)=c("row1", "row2")
 
+Glue3=t(glue2)   ## transpose the matrix. Invert rows and columns.
+Glue3
+
+dim(glue2)  ## tells you the number of rows and columns.
+
+class(glue2) # provides the class of the object (which should be ‘matrix’)
+
+## Exercise 7
+
+a=seq(1,10,by=2)
+a
+
+b=seq(10,1,by=-2)
+b
+
+c=rep(0,5)
+c
+
+seven=rbind(a,b,c)
+seven
+
+seventrue=t(seven)
+seventrue
+
+colnames(seventrue)=c("A", "B", "C")
+rownames(seventrue)=c("a", "b", "c", "d", "e")
+
+seventrue
 
 
+### Dataframes: matrix, but rows correspond to characters (observations) and columns corresponod to variables.
+
+var1=c(1:10)
+var2=sample(50:100, 10)
+var3=factor(c(rep("a",2), rep("b",5), rep("c",3)))
+DF=data.frame(var3,var2,var1)
+DF
+
+class(DF) # object class (‘dataframe’)
+
+dim(DF) # number of observations and variables
+
+names(DF) # variable names (i.e., column names)
+
+str(DF) # provides information on the structure of the data frame
+
+summary(DF) # returns summary statistics for each variable in the data frame (note the difference in numeric and categorical variables)
+
+## Exercise 8
+
+var1=seq(2:100,by=2)
+var1
+
+var2=rep(c(TRUE, FALSE), times=c(30,20))
+var2
+
+var3=rep(c("V","W","X","Y","Z"), times=10)
+var3
+
+DF=data.frame(var3,var2,var1)
+DF
+
+str(DF) # provides information on the structure of the data frame
+
+summary(DF) # returns summary statistics for each variable in the data frame (note the difference in numeric and categorical variables)
 
 
 
