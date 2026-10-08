@@ -118,13 +118,39 @@ str(DF) # provides information on the structure of the data frame
 summary(DF) # returns summary statistics for each variable in the data frame (note the difference in numeric and categorical variables)
 
 
+## Using working directories 
 
+data=read.table("alkfos.txt", header=T) # to open a file in your working directory
           
+str(data) # to analyze the data 
 
-                   
+summary(data)
+
+# to transform a variable from character to factor
+data$grp=factor(data$grp)
+
+rownames(data) ## tells you the names of rows in your dataframe.
+
+## this is how to export a new datafile using the previous one.
+write.table(data, "data_new.txt", sep="/t", col.names = T,
+            row.names=F, quote=T)
 
 
+## how to select and change elements within dataframes and matrices 
 
+data[1,1] # extracts the data from row 1, column 1
+
+data[1:3, 2:5] # extracts the first three elements in columns 2 to 5
+
+data[1,] # extracts all the elments of the first row 
+
+data[,1] # extracts all the elments of the first column
+
+dat[,c(1,3,5)] # extracts columns 1, 3, and 5. 
+
+dat[,-c(1,3,5)] # extracts all columns BUT 1, 3, and 5. 
+
+## writing data[,2] is the same as writing data$c0, by specifying its vairable name. 
 
 
 
