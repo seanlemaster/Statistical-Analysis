@@ -153,8 +153,43 @@ dat[,-c(1,3,5)] # extracts all columns BUT 1, 3, and 5.
 ## writing data[,2] is the same as writing data$c0, by specifying its vairable name. 
 
 
+## If you want to load previously saved data, save your objects then set your working directory and then:
+save.image(file="sdsadsa.RData")
+
+## set working directory on new R, then
+
+load("nameoffile.RData")
+
+## Can also do this:
+savehistory("my_history.txt")
 
 
+## Exercise 9
+
+data=read.table("rats.txt", header=T)
+View(data)
+
+str(data) # just to check the structure of the data
+
+mean(data$Glycogen) # average for the first column
+var(data$Glycogen) # variance for the first column
+
+## OR
+
+mean(data[,1])
+var(data[,1])
+
+## To remove column 2
+
+data2=data[,-2]
+View(data2)
+
+## To save data in italian csv 
+write.table(data2, "rats_without_treatment.", sep=";", quote = F, row.names = F)
+
+## if you wanted to save everything use 
+save.image(file="")
+load("")
                    
                    
                    
