@@ -1,0 +1,81 @@
+## Exercise 1
+
+v_inc <- 1:10
+v_let <- rep(c("A", "B", "C"), times = 4)
+v_dec <- 20:10
+v <- c(v_inc, v_let, v_dec)
+
+length(v)
+
+class(v)
+
+v_rev  <- irev(v)
+## just look at sheet 
+
+
+
+
+## Exercise 2
+s <- seq(3, 6, by=0.5)
+summary(s)
+
+quantile(s)
+
+# append three copies of the maximum value
+s2 <- c(s, max(s), max(s), max(s))
+s2
+
+summary(s2)
+
+
+
+
+
+## Exercise 3: just look at the sheet 
+
+## Exercise 4: also look at sheet
+
+## Exercise 5: also look at sheet
+
+
+
+
+## Exercise 6: 
+A_num <- matric(1:16, nrow=4, ncol=4, byrow=TRUE)    #byrow means the data is filled by rows 
+
+A_chr <- matrix(letters[1:16], nrow=4, ncol=4, byrow = FALSE)    # filled by columns
+
+AB <- rbind(A_num, A_chr)
+
+# rows 2-3 and columns 3-4
+sub_23_34 <- AB[2:3, 3:4]
+
+last_col <- AB[,4]
+
+first_row_rows <- AB[1:2,0]
+
+
+
+
+## Exercise 7
+
+X <- sample(50:100, 10, replace = TRUE)
+G <- sample(c("G1", "G2", "G3", 10, replace = TRUE, prob=c(0.5, 0.3, 0.2))
+
+df <- data.frame(X, G)
+names(df) <- c("Value, "Group")
+
+str(df)
+
+df_G2 <- df[df$Group == "G2"]
+
+mean(df_G2$Value)
+
+
+
+## Exercise 8
+
+write.table(df, file = "exercise7df.txt", sep = "/t", quote = FALSE, row.names=F)    ##that last one is important to prevent a random column of 1,2,3,4... from showing up
+
+
+
