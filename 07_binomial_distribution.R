@@ -35,7 +35,7 @@ pbinom(27, size=30, prob=2/3)
   dbinom(27, size=30, prob=2/3)
 
 # Another method 
-pbinom(67, size=30, prob=2/3, lower.tail=FALSE)
+pbinom(27, size=30, prob=2/3, lower.tail=FALSE)
 
 
 # simga controls the spread (width) of the distribution, the o looking thing
@@ -56,7 +56,7 @@ y=dbinom(x, size=25, prob=0.8)
 plot(x,y,type="h")
 
 # B
-pbinom(20, size=25, prob=0.8)
+dbinom(20, size=25, prob=0.8)
 
 #C
 plot(x,y,type="h")
@@ -74,13 +74,18 @@ abline(v=24, col="red")
 #A
 x=seq(80,160,0.5)
 y = dnorm(x,mean=120,sd=10)
-plot(x, y, type = "h")
+plot(x, y, type = "l")
 
 #B
-y[[x=120]]
-y[[x=145]]
+dnorm(120, mean=120, sd=10)  # why is this more likely. bc it is the mean, so the most likely value to get
+dnrom(145, mean=120, sd=10)
 
 #C
 abline(v=100, col="red") 
 abline(v=140, col="red")
-pnorm(140, mean = 120, sd = 10) - pnorm(100, mean = 120, sd = 10)
+pnorm(140, mean = 120, sd = 10) - pnorm(100, mean = 120, sd = 10)  #pnorm = probability that is lower # probability is represented by the area under the surve between the values
+# means that if we extract by random an individual in this populaiton we have a probability of ___ to observe an individual with a value between these two values in this population. 
+
+#D
+abine(v=145, col="blue")
+1-pnorm(145, mean=120, sd=10)
